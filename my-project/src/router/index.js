@@ -14,14 +14,14 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path:'/a',
-      name:'a',
-      component:A
+      path: '/a',
+      name: 'a',
+      component: A
     },
     {
-      path:'/b',
-      name:'b',
-      component:B
+      path: '/b',
+      name: 'b',
+      component: B
     }
   ]
 })
