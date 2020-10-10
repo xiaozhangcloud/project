@@ -5,7 +5,19 @@ import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
-
+/* router保护路由 */ 
+router.beforeEach((to,from,next) => {
+  console.log('to',to)
+  console.log('from',from)
+  console.log('next',next)
+  if(sessionStorage.getItem('userInfo')){
+    next()
+  } else {
+    sessionStorage.setItem('userInfo','123')
+    next({path: '/404', userInfo: '123'})
+  }
+})
+  
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
